@@ -8,7 +8,6 @@ async function putMessageToApi(payload) {
       URL,
       ENDPOINTS: { MESSAGES },
     } = API;
-    console.log('putMessageToApi -> JSON.stringify(payload)', JSON.stringify(payload));
     return await fetchData(`${URL}/${MESSAGES}/`, {
       method: 'POST',
       headers: {

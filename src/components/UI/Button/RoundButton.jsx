@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { DEVICE } from '../../../config';
 
 const Button = styled.button`
   margin: 0 auto;

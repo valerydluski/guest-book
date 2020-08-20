@@ -1,4 +1,4 @@
-import { takeEvery, call, put, select } from 'redux-saga/effects';
+import { takeEvery, call, put } from 'redux-saga/effects';
 import { LOAD_DATA_FROM_API } from '../types';
 import getMessageFromApi from '../../../services/getMessageFromApi';
 import { saveMessagesFromAPI } from '../actions';
