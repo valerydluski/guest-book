@@ -1,5 +1,7 @@
-import { all } from 'redux-saga/effects';
+import { all, fork } from 'redux-saga/effects';
+import watchMessages from './UserMessage/sagas/putMessages';
+import watchLoadData from './UserMessage/sagas/loadDataSaga';
 
 export default function* watchSaga() {
-  yield all([]);
+  yield all([fork(watchMessages), fork(watchLoadData)]);
 }

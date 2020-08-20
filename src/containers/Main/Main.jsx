@@ -1,15 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { toast } from 'react-toastify';
-import { saveUserMessageToStore, saveUserMessageToAPI } from '../../redux/UserMessage/actions';
+import {
+  saveUserMessageToStore,
+  saveUserMessageToAPI,
+  loadDataFromApi,
+} from '../../redux/UserMessage/actions';
 import ReduxMessageForm from '../../components/MessageForm/MessageForm';
 import Messages from '../../components/Messages/Messages';
 
 function Main(props) {
-  const { saveToStore, saveToAPI } = props;
+  const { saveToStore, saveToAPI, loadData } = props;
+  loadData();
   const onSubmit = (formData) => {
     saveToStore(formData);
-    saveToAPI();
+    saveToAPI(formData);
     toast.success('отправленно');
   };
 
@@ -24,6 +29,7 @@ function Main(props) {
 const mapDispatchToProps = {
   saveToStore: saveUserMessageToStore,
   saveToAPI: saveUserMessageToAPI,
+  loadData: loadDataFromApi,
 };
 
 export default connect(null, mapDispatchToProps)(Main);

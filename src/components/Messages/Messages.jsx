@@ -6,11 +6,16 @@ import Message from './Message';
 
 const Messages = (props) => {
   const { messages } = props;
-  console.log('Messages -> messages', messages);
   return (
     <MessagesContainerStyled>
       {messages.map((message) => {
-        return <Message name={message.name} message={message.message} />;
+        return (
+          <Message
+            name={message.name}
+            message={message.message}
+            key={message.name + message.message}
+          />
+        );
       })}
     </MessagesContainerStyled>
   );

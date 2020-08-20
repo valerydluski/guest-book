@@ -20,3 +20,10 @@ export const DEVICE = {
   desktop: `(max-width: ${SCREEN_SIZE.desktop}px)`,
   desktopL: `(max-width: ${SCREEN_SIZE.desktop}px)`,
 };
+
+export const API = {
+  URL: 'https://dry-harbor-91865.herokuapp.com',
+  ENDPOINTS: {
+    MESSAGES: 'messages',
+  },
+};
